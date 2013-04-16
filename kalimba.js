@@ -28,6 +28,7 @@ var Kalimba = function(notes, container) {
     var tine = document.createElement('div');
     tine.className = 'tine';
     tine.setAttribute('data-note', note);
+    tine.onclick = play_tine;
     return tine;
   }
 
@@ -35,6 +36,10 @@ var Kalimba = function(notes, container) {
     var hole = document.createElement('div');
     hole.className = 'hole';
     return hole;
+  }
+
+  function play_tine() {
+    console.log(this.getAttribute('data-note'));
   }
 }
 
