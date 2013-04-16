@@ -10,6 +10,13 @@ body {
   text-align: center;
 }
 
+#fork {
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .kalimba {
   background-image: url(wood.jpg);
   display: inline-block;
