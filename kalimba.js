@@ -16,11 +16,18 @@ var Kalimba = function(notes, container) {
   this.element.appendChild(bar());
   this.container.appendChild(this.element);
 
+
   function tines(notes) {
     var tines = document.createElement('div');
     tines.className = 'tines';
-    for (i=0, l=notes.length; i < l; i++) {
-      tines.appendChild(tine(notes[i]));
+    var height = 300;
+    for (var index = 0, length = notes.length, root = Math.ceil(length / 2); index < length; index++) {
+      var current_tine = tine(notes[index]);
+      var offset = index + 1 - root;
+      var margin = (offset < 0 ? 10 : -13) * offset;
+      current_tine.setAttribute('data-offset', offset);
+      current_tine.style.height = (height + margin) + 'px';
+      tines.appendChild(current_tine);
     }
     return tines;
   }
