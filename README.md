@@ -2,6 +2,11 @@
 
 ## Notes
 
+#### Check out [VexFlow](http://www.vexflow.com/)
+
+VexFlow is an open-source online music notation rendering API. It is written completely in JavaScript, and runs right in the browser. VexFlow supports HTML5 Canvas and SVG.
+
+
 #### From Stanford's [Specifying a tablature staff](http://www.slac.stanford.edu/grp/eg/minos/dist/dist_aux4/overflowfromgmieg/Mup/uguide/tabstaff.html) article
 
 To set up a tablature staff, you use the stafflines parameter. To get a standard 6-line guitar tablature staff, you can just say 
