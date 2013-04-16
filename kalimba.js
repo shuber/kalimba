@@ -13,6 +13,7 @@ var Kalimba = function(notes, container) {
 
   this.element.appendChild(this.tines);
   this.element.appendChild(hole());
+  this.element.appendChild(bar());
   this.container.appendChild(this.element);
 
   function tines(notes) {
@@ -36,6 +37,12 @@ var Kalimba = function(notes, container) {
     var hole = document.createElement('div');
     hole.className = 'hole';
     return hole;
+  }
+
+  function bar() {
+    var bar = document.createElement('div');
+    bar.className = 'bar';
+    return bar;
   }
 
   function play_tine() {

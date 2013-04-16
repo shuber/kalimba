@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -21,16 +22,16 @@ body {
   background-image: url(wood.jpg);
   display: inline-block;
   margin: 0 auto;
+  padding-top: 15px;
+  position: relative;
   text-align: center;
+  z-index: 1;
 
   box-shadow: 6px 5px 3px #999;
 
-  -webkit-border-bottom-left-radius: 20px;
-  -moz-border-bottom-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  -webkit-border-bottom-right-radius: 20px;
-  -moz-border-bottom-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
 }
 
 .tines {
@@ -46,15 +47,13 @@ body {
   height: 300px;
   margin: 0 5px;
   width: 18px;
+  z-index: 3;
 
   box-shadow: 4px 3px 3px #000;
 
-  -webkit-border-bottom-left-radius: 8px;
-  -moz-border-bottom-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  -webkit-border-bottom-right-radius: 8px;
-  -moz-border-bottom-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 .hole {
@@ -69,6 +68,21 @@ body {
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   border-radius: 60px;
+}
+
+.bar {
+  background-color: #fff;
+  height: 15px;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  z-index: 4;
+
+  box-shadow: 2px 2px 3px #000;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 .tine[data-note="F#"] {
