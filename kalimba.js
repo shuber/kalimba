@@ -8,15 +8,12 @@ var Kalimba = function(notes, container) {
   }
 
   this.notes = notes;
+  this.container = container;
   this.tines = tines(notes)
 
   this.element.appendChild(this.tines);
   this.element.appendChild(hole());
-
-  if (container) {
-    this.container = container;
-    this.container.appendChild(this.element);
-  }
+  this.container.appendChild(this.element);
 
   function tines(notes) {
     var tines = document.createElement('div');
