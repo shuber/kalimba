@@ -2,10 +2,19 @@
 
 ## Notes
 
+#### [KTabS](http://ktabs.theirhouse.org/ktabsMain.php)
+
+KTabS is our Kalimba Tablature Software that allows you to easily create kalimba music on your computer. Inspired by the kalimba tablature created by Mark Holdaway, KTabS helps you customize tablature for your kalimba and compose, edit, play back, and print out your kalimba music with simple clicks of the mouse.
+
 #### Check out [VexFlow](http://www.vexflow.com/)
 
 VexFlow is an open-source online music notation rendering API. It is written completely in JavaScript, and runs right in the browser. VexFlow supports HTML5 Canvas and SVG.
 
+#### Web based [Guitar Tuner](http://phenomnomnominal.github.io/docs/tuner.html)
+
+Contains the implementation of a pure JavaScript Chromatic Tuner, which uses the Microphone input of the computer with the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) to perform real-time pitch detection. Currently requires the latest build of Google Canary using a Mac computer with "Web Audio Input" enabled in [chrome://flags](chrome://flags).
+
+Also see other [chrome web audio input demos](http://chromium.googlecode.com/svn/trunk/samples/audio/samples.html).
 
 #### From Stanford's [Specifying a tablature staff](http://www.slac.stanford.edu/grp/eg/minos/dist/dist_aux4/overflowfromgmieg/Mup/uguide/tabstaff.html) article
 
