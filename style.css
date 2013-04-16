@@ -46,6 +46,8 @@ body {
   margin: 0 5px;
   width: 18px;
 
+  box-shadow: 4px 3px 3px #000;
+
   -webkit-border-bottom-left-radius: 8px;
   -moz-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;
