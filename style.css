@@ -25,7 +25,6 @@ body {
   padding-top: 15px;
   position: relative;
   text-align: center;
-  z-index: 1;
 
   box-shadow: 6px 5px 3px #999;
 
@@ -47,7 +46,6 @@ body {
   height: 300px;
   margin: 0 5px;
   width: 18px;
-  z-index: 3;
 
   box-shadow: 4px 3px 3px #000;
 
@@ -76,7 +74,6 @@ body {
   position: absolute;
   top: 80px;
   width: 100%;
-  z-index: 4;
 
   box-shadow: 2px 2px 3px #000;
 
