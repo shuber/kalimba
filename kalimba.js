@@ -37,7 +37,7 @@ var Kalimba = function(notes, container) {
     tine.className = 'tine';
     tine.setAttribute('data-note', note);
     tine.innerHTML = '<span>' + note + '</span>';
-    tine.onclick = play_tine;
+    tine.onmouseover = play_tine;
     return tine;
   }
 
