@@ -93,6 +93,65 @@ body {
   border-radius: 8px;
 }
 
+@keyframes shake{ 
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(1px, 0); }
+  20% { transform: translate(0, 0); }
+  30% { transform: translate(-1px, 0); }
+  40% { transform: translate(0, 0); }
+  50% { transform: translate(1px, 0); }
+  60% { transform: translate(0, 0); }
+  70% { transform: translate(-1px, 0); }
+  80% { transform: translate(0, 0); }
+  90% { transform: translate(1px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@-moz-keyframes shake{ 
+  0% { -moz-transform: translate(0, 0); }
+  10% { -moz-transform: translate(1px, 0); }
+  20% { -moz-transform: translate(0, 0); }
+  30% { -moz-transform: translate(-1px, 0); }
+  40% { -moz-transform: translate(0, 0); }
+  50% { -moz-transform: translate(1px, 0); }
+  60% { -moz-transform: translate(0, 0); }
+  70% { -moz-transform: translate(-1px, 0); }
+  80% { -moz-transform: translate(0, 0); }
+  90% { -moz-transform: translate(1px, 0); }
+  100% { -moz-transform: translate(0, 0); }
+}
+
+@-webkit-keyframes shake {
+  0% { -webkit-transform: translate(0, 0); }
+  10% { -webkit-transform: translate(1px, 0); }
+  20% { -webkit-transform: translate(0, 0); }
+  30% { -webkit-transform: translate(-1px, 0); }
+  40% { -webkit-transform: translate(0, 0); }
+  50% { -webkit-transform: translate(1px, 0); }
+  60% { -webkit-transform: translate(0, 0); }
+  70% { -webkit-transform: translate(-1px, 0); }
+  80% { -webkit-transform: translate(0, 0); }
+  90% { -webkit-transform: translate(1px, 0); }
+  100% { -webkit-transform: translate(0, 0); }
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: 150ms;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+
+  -moz-animation-name: shake;
+  -moz-animation-duration: 150ms;
+  -moz-animation-iteration-count: 2;
+  -moz-animation-timing-function: linear;
+
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 150ms;
+  -webkit-animation-iteration-count: 2;
+  -webkit-animation-timing-function: linear;
+}
+
 .tine[data-note="F#'"], .tine[data-note="A"], .tine[data-note="C'"] {
   background-color: #369;
 }
