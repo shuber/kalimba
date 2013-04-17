@@ -102,7 +102,7 @@ body {
 }
 
 .tine[data-note="B'"], .tine[data-note="B"], .tine[data-note="G'"] {
-  background-color: #FF3;
+  background-color: #FF0;
 }
 
 .tine[data-note="G"], .tine[data-note="D"] {
