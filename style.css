@@ -86,30 +86,26 @@ body {
   border-radius: 8px;
 }
 
-.tine[data-note="F#"] {
+.tine[data-note="F#'"], .tine[data-note="A"], .tine[data-note="C'"] {
   background-color: #369;
 }
 
-.tine[data-note="D"] {
+.tine[data-note="D'"], .tine[data-note="G-"], .tine[data-note="E'"] {
   background-color: #063;
 }
 
-.tine[data-note="B"] {
+.tine[data-note="B'"], .tine[data-note="B"], .tine[data-note="G'"] {
   background-color: #FF3;
 }
 
-.tine[data-note="G"] {
+.tine[data-note="G"], .tine[data-note="D"] {
   background-color: #F90;
 }
 
-.tine[data-note="E"] {
+.tine[data-note="E"], .tine[data-note="F#"] {
   background-color: #C33;
 }
 
-.tine[data-note="C"] {
+.tine[data-note="C"], .tine[data-note="A'"] {
   background-color: #936;
-}
-
-.tine[data-note="A"] {
-  background-color: #F69;
 }

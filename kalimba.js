@@ -59,5 +59,5 @@ var Kalimba = function(notes, container) {
 }
 
 Kalimba.Tunings = {
-  'alto': ['F#', 'D', 'B', 'G', 'E', 'C', 'A', 'G', 'B', 'D', 'F#', 'A', 'C', 'E', 'G']
+  'alto': ["F#'", "D'", "B'", 'G', 'E', 'C', 'A', 'G-', 'B', 'D', 'F#', "A'", "C'", "E'", "G'"]
 }
