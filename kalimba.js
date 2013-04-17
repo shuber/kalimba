@@ -36,6 +36,7 @@ var Kalimba = function(notes, container) {
     var tine = document.createElement('div');
     tine.className = 'tine';
     tine.setAttribute('data-note', note);
+    tine.innerHTML = '<span>' + note + '</span>';
     tine.onclick = play_tine;
     return tine;
   }

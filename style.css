@@ -53,6 +53,11 @@ body {
   border-radius: 8px;
 }
 
+.tine span {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 9px;
+}
+
 .hole {
   background: transparent url(wood.jpg) bottom right;
   height: 120px;
