@@ -46,7 +46,6 @@ class window.Kalimba
       margin = (if offset < 0 then 10 else -13) * offset
       tine.setAttribute 'data-offset', offset
       tine.style.height = (height + margin) + 'px'
-      console.log(index   + ' => ' + margin + ' => ' + tine.style.height);
       tines.appendChild tine
     tines
 
