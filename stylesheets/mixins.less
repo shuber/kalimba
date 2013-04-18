@@ -1,0 +1,33 @@
+.animation(@name, @duration, @iterations, @timing) {
+  animation-name: @name;
+  animation-duration: @duration;
+  animation-iteration-count: @iterations;
+  animation-timing-function: @timing;
+
+  -moz-animation-name: @name;
+  -moz-animation-duration: @duration;
+  -moz-animation-iteration-count: @iterations;
+  -moz-animation-timing-function: @timing;
+
+  -webkit-animation-name: @name;
+  -webkit-animation-duration: @duration;
+  -webkit-animation-iteration-count: @iterations;
+  -webkit-animation-timing-function: @timing;
+}
+
+.rounded-corners (@radius: 5px, @type: '') {
+  -webkit-border-@{type}radius: @radius;
+  -moz-border-@{type}radius: @radius;
+  -ms-border-@{type}radius: @radius;
+  -o-border-@{type}radius: @radius;
+  border-@{type}radius: @radius;
+}
+
+.user-select (@select: none) {
+  -webkit-touch-callout: @select;
+  -webkit-user-select: @select;
+  -khtml-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select;
+  user-select: @select;
+}
