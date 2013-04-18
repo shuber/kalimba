@@ -54,10 +54,8 @@ var Kalimba = function(notes, container) {
   }
 
   function play_tine() {
-    var current_class = this.className;
-    this.className += ' shake';
-    var current_tine = this;
-    setTimeout(function() { current_tine.className = current_class; }, 150);
+    // TODO: generate audio sound
+    console.log(this.getAttribute('data-note'));
   }
 }
 

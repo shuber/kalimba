@@ -60,6 +60,23 @@ body {
   border-radius: 8px;
 }
 
+.tine:hover {
+  animation-name: shake;
+  animation-duration: 150ms;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+
+  -moz-animation-name: shake;
+  -moz-animation-duration: 150ms;
+  -moz-animation-iteration-count: 2;
+  -moz-animation-timing-function: linear;
+
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 150ms;
+  -webkit-animation-iteration-count: 2;
+  -webkit-animation-timing-function: linear;
+}
+
 .tine span {
   color: rgba(0, 0, 0, 0.6);
   font-size: 9px;
@@ -91,6 +108,30 @@ body {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
+}
+
+.tine[data-note="F#'"], .tine[data-note="A"], .tine[data-note="C'"] {
+  background-color: #369;
+}
+
+.tine[data-note="D'"], .tine[data-note="G-"], .tine[data-note="E'"] {
+  background-color: #063;
+}
+
+.tine[data-note="B'"], .tine[data-note="B"], .tine[data-note="G'"] {
+  background-color: #FF0;
+}
+
+.tine[data-note="G"], .tine[data-note="D"] {
+  background-color: #F90;
+}
+
+.tine[data-note="E"], .tine[data-note="F#"] {
+  background-color: #C33;
+}
+
+.tine[data-note="C"], .tine[data-note="A'"] {
+  background-color: #936;
 }
 
 @keyframes shake{ 
@@ -133,45 +174,4 @@ body {
   80% { -webkit-transform: translate(0, 0); }
   90% { -webkit-transform: translate(1px, 0); }
   100% { -webkit-transform: translate(0, 0); }
-}
-
-.shake {
-  animation-name: shake;
-  animation-duration: 150ms;
-  animation-iteration-count: 2;
-  animation-timing-function: linear;
-
-  -moz-animation-name: shake;
-  -moz-animation-duration: 150ms;
-  -moz-animation-iteration-count: 2;
-  -moz-animation-timing-function: linear;
-
-  -webkit-animation-name: shake;
-  -webkit-animation-duration: 150ms;
-  -webkit-animation-iteration-count: 2;
-  -webkit-animation-timing-function: linear;
-}
-
-.tine[data-note="F#'"], .tine[data-note="A"], .tine[data-note="C'"] {
-  background-color: #369;
-}
-
-.tine[data-note="D'"], .tine[data-note="G-"], .tine[data-note="E'"] {
-  background-color: #063;
-}
-
-.tine[data-note="B'"], .tine[data-note="B"], .tine[data-note="G'"] {
-  background-color: #FF0;
-}
-
-.tine[data-note="G"], .tine[data-note="D"] {
-  background-color: #F90;
-}
-
-.tine[data-note="E"], .tine[data-note="F#"] {
-  background-color: #C33;
-}
-
-.tine[data-note="C"], .tine[data-note="A'"] {
-  background-color: #936;
 }
