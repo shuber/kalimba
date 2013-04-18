@@ -10,19 +10,15 @@ class window.Kalimba
 
     @html.setAttribute 'data-notes', notes
     @html.appendChild @tines(notes)
-    @html.appendChild @hole()
-    @html.appendChild @bar()
+    @html.appendChild @element('div', className: 'hole')
+    @html.appendChild @element('div', className: 'bar')
     @container.appendChild @html
-
-  bar: -> @element 'div', className: 'bar'
 
   element: (type, attributes = {}) ->
     element = document.createElement type
     for attribute, value of attributes
       element[attribute] = value
     element
-
-  hole: -> @element 'div', className: 'hole'
 
   play: ->
     # TODO: generate audio sound
