@@ -2,7 +2,7 @@
 
 class window.Kalimba
   constructor: (notes, @container) ->
-    @html = @div 'kalimba'
+    @html = @element 'div', className: 'kalimba'
 
     if tuning = Kalimba.Tunings[notes]
       @html.setAttribute 'data-tuning', notes
@@ -14,28 +14,30 @@ class window.Kalimba
     @html.appendChild @bar()
     @container.appendChild @html
 
-  bar: -> @div 'bar'
+  bar: -> @element 'div', className: 'bar'
 
-  div: (className) ->
-    div = document.createElement 'div'
-    div.className = className
-    div
+  element: (type, attributes = {}) ->
+    element = document.createElement type
+    for attribute, value of attributes
+      element[attribute] = value
+    element
 
-  hole: -> @div 'hole'
+  hole: -> @element 'div', className: 'hole'
 
   play: ->
     # TODO: generate audio sound
     console.log @getAttribute('data-note')
 
   tine: (note) ->
-    tine = @div 'tine'
+    tine = @element 'div',
+      className: 'tine',
+      innerHTML: "<span>#{note}</span>",
+      onmouseover: @play,
     tine.setAttribute 'data-note', note
-    tine.innerHTML = "<span>#{note}</span>"
-    tine.onmouseover = @play
     tine
 
   tines: (notes) ->
-    tines = @div 'tines'
+    tines = @element 'div', className: 'tines'
     height = 300
     root = Math.ceil(notes.length / 2)
     for note, index in notes
