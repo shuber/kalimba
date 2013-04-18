@@ -19,7 +19,7 @@ body {
 }
 
 .kalimba {
-  background-image: url(wood.jpg);
+  background-image: url(../images/wood.jpg);
   display: inline-block;
   margin: 0 auto;
   padding-top: 15px;
@@ -83,7 +83,7 @@ body {
 }
 
 .hole {
-  background: transparent url(wood.jpg) bottom right;
+  background: transparent url(../images/wood.jpg) bottom right;
   height: 120px;
   margin: 0 auto 200px auto;
   width: 120px;
