@@ -2,17 +2,17 @@
 
 class window.Kalimba
   constructor: (notes, @container) ->
-    @element = @div 'kalimba'
+    @html = @div 'kalimba'
 
     if tuning = Kalimba.Tunings[notes]
-      @element.setAttribute 'data-tuning', notes
+      @html.setAttribute 'data-tuning', notes
       notes = tuning
 
-    @element.setAttribute 'data-notes', notes
-    @element.appendChild @tines(notes)
-    @element.appendChild @hole()
-    @element.appendChild @bar()
-    @container.appendChild @element
+    @html.setAttribute 'data-notes', notes
+    @html.appendChild @tines(notes)
+    @html.appendChild @hole()
+    @html.appendChild @bar()
+    @container.appendChild @html
 
   bar: -> @div 'bar'
 
