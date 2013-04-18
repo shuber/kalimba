@@ -9,14 +9,17 @@
 
     <link rel="stylesheet/less" href="stylesheets/style.less" type="text/css" />
 
+    <script type="text/javascript" src="javascripts/coffeescript.js"></script>
+    <script type="text/javascript" src="javascripts/browser.js"></script>
     <script type="text/javascript" src="javascripts/less.js"></script>
-    <script type="text/javascript" src="javascripts/kalimba.js"></script>
+    <script type="text/coffeescript" src="javascripts/kalimba.coffee" onload="loadKalimba()"></script>
+    <script type="text/javascript">
+      function loadKalimba() {
+        var kalimba = new Kalimba('alto', document.body);
+      }
+    </script>
   </head>
   <body>
-    <script>
-      var kalimba = new Kalimba('alto', document.body);
-    </script>
-
     <a href="https://github.com/shuber/kalimba" id="github-fork">
       <img src="images/fork.png" alt="Fork me on GitHub" />
     </a>
