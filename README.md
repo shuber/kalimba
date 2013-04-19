@@ -4,7 +4,7 @@
 
 Start with the `index.html` file. First it loads our main stylesheet `stylesheets/style.less`. This file is parsed with [Less CSS](http://lesscss.org/) which adds additional useful features to `css` like variables, mixins, and nested definitions. It also allows us to `@import` other stylesheets so we can separate rules into different files to make it easier to navigate and develop. `stylesheets/kalimba.less` contains most of the relevant rules to render the kalimba.
 
-`index.html` then loads some external libraries. [`coffeescript.js`](http://coffeescript.org/) which a little language that compiles into JavaScript. `browser.js` allows us to compile coffeescript in the browser instead of pre-compiling it. `less.js` allows the browser to parse `.less` files.
+`index.html` then loads some external libraries. [`coffeescript.js`](http://coffeescript.org/) is a little language that compiles into JavaScript. `browser.js` allows us to compile coffeescript in the browser instead of pre-compiling it and `less.js` does the same for `.less` files.
 
 Then `javascripts/kalimba.coffee` is loaded. This is the class that generates the html for the kalimba. The constructor accepts a list of notes and dynamically creates tines for them. Once this file is loaded a new `Kalimba` instance is created and attached to the `<body>` tag with `var kalimba = new Kalimba('alto', document.body);`
 
