@@ -1,5 +1,5 @@
 class window.Kalimba
-  constructor: (notes, @container) ->
+  constructor: (@container, notes = 'alto') ->
     @html = HTML 'div', className: 'kalimba'
 
     if tuning = Kalimba.Tunings[notes]

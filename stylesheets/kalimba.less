@@ -14,55 +14,28 @@
 
   background-image: url(../images/wood.jpg);
   box-shadow: 6px 5px 3px #999;
-}
 
-.tines {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 0 10px;
-}
+  .bar {
+    .rounded-corners(8px);
 
-.tine {
-  .rounded-corners(8px);
+    height: 15px;
+    position: absolute;
+    top: 70px;
+    width: 100%;
 
-  cursor: pointer;
-  float: left;
-  margin: 0 5px;
-  width: 18px;
-
-  background-color: #999;
-  box-shadow: 4px 3px 3px #000;
-
-  &:hover {
-    .animation(vibrate, 150ms, 2, linear);
+    background-color: #fff;
+    box-shadow: 2px 2px 3px #000;
   }
 
-  span {
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 9px;
+  .hole {
+    .rounded-corners(60px);
+
+    height: 120px;
+    margin: 0 auto 200px auto;
+    width: 120px;
+
+    background: transparent url(../images/wood.jpg) bottom right;
+    border: 1px solid #000;
+    box-shadow: inset 6px 5px 3px #000;
   }
-}
-
-.hole {
-  .rounded-corners(60px);
-
-  height: 120px;
-  margin: 0 auto 200px auto;
-  width: 120px;
-
-  background: transparent url(../images/wood.jpg) bottom right;
-  border: 1px solid #000;
-  box-shadow: inset 6px 5px 3px #000;
-}
-
-.bar {
-  .rounded-corners(8px);
-
-  height: 15px;
-  position: absolute;
-  top: 70px;
-  width: 100%;
-
-  background-color: #fff;
-  box-shadow: 2px 2px 3px #000;
 }

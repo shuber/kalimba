@@ -15,8 +15,9 @@
         dumpLineNumbers: 'all'
       };
 
-      function loadKalimba() {
-        var kalimba = new Kalimba('alto', document.body);
+      function load() {
+        window.kalimba = new Kalimba(document.body);
+        window.metronome = new Metronome(document.body);
       }
     </script>
 
@@ -24,7 +25,8 @@
     <script src="javascripts/browser.js" type="text/javascript"></script>
     <script src="javascripts/less.js" type="text/javascript"></script>
     <script src="javascripts/helpers.coffee" type="text/coffeescript"></script>
-    <script src="javascripts/kalimba.coffee" type="text/coffeescript" onload="loadKalimba()"></script>
+    <script src="javascripts/kalimba.coffee" type="text/coffeescript"></script>
+    <script src="javascripts/metronome.coffee" type="text/coffeescript" onload="load()"></script>
   </head>
   <body>
     <a href="https://github.com/shuber/kalimba" id="github-fork" target="_blank">
