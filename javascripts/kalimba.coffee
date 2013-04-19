@@ -1,11 +1,3 @@
-# See http://coffeescript.org/
-
-HTML = (type, attributes = {}) ->
-  element = document.createElement type
-  for attribute, value of attributes
-    element[attribute] = value
-  element
-
 class window.Kalimba
   constructor: (notes, @container) ->
     @html = HTML 'div', className: 'kalimba'
