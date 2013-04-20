@@ -19,7 +19,26 @@
         var container = document.getElementById('container');
         window.kalimba = new Kalimba(container);
         window.metronome = new Metronome(container);
-        Tuner();
+        window.tuner = new Tuner();
+
+        var lastNote;
+
+        tuner.start(20, function(note, diff) {
+          if (note != lastNote) {
+            console.log([note, diff]);
+            lastNote = note;
+            $('.tuner .note').css('visibility', 'visible').find('span').html(note);
+            $('.tuner .diff').html(diff);
+            var tine = $('.tine[data-note="' + note + '"]').addClass('tuned').data('tuned-at', new Date().getTime());
+            var duration = 500;
+            var callback = function() {
+              var now = new Date().getTime();
+              if (tine.data('tuned-at') + duration < now)
+                tine.removeClass('tuned');
+            }
+            setTimeout(callback, duration);
+          }
+        });
       }
     </script>
 
@@ -37,11 +56,11 @@
   </head>
   <body>
     <div id="container">
-      <div class="tuner-wrapper">
-        <div class="note"><span></span></div>
-        <div class="tuner">
-          <canvas></canvas>
+      <div class="tuner">
+        <div class="note">
+          <span></span>
         </div>
+        <span class="diff"></span>
       </div>
     </div>
 

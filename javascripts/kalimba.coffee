@@ -14,7 +14,6 @@ class window.Kalimba
 
   play: ->
     # TODO: generate audio sound
-    console.log @getAttribute('data-note')
 
   tine: (note) ->
     tine = HTML 'div',
