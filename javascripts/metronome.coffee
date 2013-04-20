@@ -14,16 +14,14 @@ class window.Metronome
     }
 
   start: =>
-    if @html.getAttribute('data-started') != 'true'
-      @beat.innerHTML = ''
-      @html.setAttribute 'data-started', 'true'
-      @tick()
+    @beat.innerHTML = ''
+    @html.setAttribute 'data-started'
+    @tick()
 
-  stop: =>
-    @html.setAttribute 'data-started', 'false'
+  stop: => @html.removeAttribute 'data-started'
 
   tick: =>
-    if @html.getAttribute('data-started') == 'true'
+    if @html.getAttribute 'data-started'
       currentBeat = parseInt @beat.innerHTML
       nextBeat = if isNaN currentBeat then 1 else currentBeat + 1
       sound = if nextBeat == @beatsPerCycle then @sounds.tock else @sounds.tick
@@ -46,13 +44,9 @@ class window.Metronome.Controls
       (value) => @metronome.beatsPerCycle = parseInt value unless isNaN value
     @html.appendChild bpc.html
 
-    start = HTML 'input', type: 'button', value: 'Start'
-    start.onclick = @metronome.start
-    @html.appendChild start
-
-    stop = HTML 'input', type: 'button', value: 'Stop'
-    stop.onclick = @metronome.stop
-    @html.appendChild stop
+    button = new Metronome.Controls.Toggle ['Start', 'Stop'],
+      (value) => if value == 'Start' then @metronome.start() else @metronome.stop()
+    @html.appendChild button.html
 
 class window.Metronome.Controls.Increment
   constructor: (name, value, @callback) ->
@@ -86,3 +80,20 @@ class window.Metronome.Controls.Increment
   decrease: => @change parseInt(@value.value) - 1
 
   increase: => @change parseInt(@value.value) + 1
+
+class window.Metronome.Controls.Toggle
+  constructor: (@values, @callback) ->
+    @index = 0
+    @html = HTML 'input',
+      type: 'button',
+      value: @values[0],
+      className: 'toggle',
+      onclick: @click
+
+  click: =>
+    value = @values[@index]
+    @index = @index + 1
+    @index = 0 if typeof @values[@index] == 'undefined'
+    @html.value = @values[@index]
+    @callback value
+    
