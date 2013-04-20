@@ -9,11 +9,13 @@ class window.Metronome
     @container.appendChild @html
 
   start: =>
-    @beat.innerHTML = ''
+    @stop()
     @started = true
     @tick()
 
-  stop: => @started = false
+  stop: => 
+    @started = false
+    @beat.innerHTML = ''
 
   tick: =>
     if @started
