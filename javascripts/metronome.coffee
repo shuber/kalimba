@@ -1,5 +1,5 @@
 class window.Metronome
-  constructor: (@container, @beatsPerMinute = 100, @beatsPerBar = 4) ->
+  constructor: (@container, @beatsPerMinute = 100, @beatsPerCycle = 4) ->
     @html = HTML 'div', className: 'metronome'
     @beat = HTML 'div', className: 'beat'
     @html.appendChild @beat
@@ -20,7 +20,7 @@ class window.Metronome
   tick: =>
     if @html.getAttribute('data-started') == 'true'
       currentBeat = parseInt @beat.innerHTML
-      currentBeat = 0 if currentBeat >= @beatsPerBar || isNaN currentBeat
+      currentBeat = 0 if currentBeat >= @beatsPerCycle || isNaN currentBeat
       @beat.innerHTML = currentBeat + 1
       setTimeout @tick, 1000*60/@beatsPerMinute
 
@@ -33,10 +33,10 @@ class window.Metronome.Controls
       (value) => @metronome.beatsPerMinute = value unless isNaN value
     @html.appendChild bpm.html
 
-    bpb = new Metronome.Controls.Toggle 'BPB',
-      @metronome.beatsPerBar,
-      (value) => @metronome.beatsPerBar = value unless isNaN value
-    @html.appendChild bpb.html
+    bpc = new Metronome.Controls.Toggle 'BPC',
+      @metronome.beatsPerCycle,
+      (value) => @metronome.beatsPerCycle = value unless isNaN value
+    @html.appendChild bpc.html
 
     start = HTML 'input', type: 'button', value: 'Start'
     start.onclick = @metronome.start
