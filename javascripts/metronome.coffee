@@ -3,19 +3,10 @@ class window.Metronome
     @html = HTML 'div', className: 'metronome'
     @beat = HTML 'div', className: 'beat'
     @html.appendChild @beat
-    @html.appendChild @controls()
+
+    @controls = new Metronome.Controls(this)
+    @html.appendChild @controls.html
     @container.appendChild @html
-
-  controls: ->
-    controls = HTML 'div', className: 'controls'
-    start = HTML 'input', type: 'button', value: 'Start'
-    start.onclick = @start
-    controls.appendChild start
-
-    stop = HTML 'input', type: 'button', value: 'Stop'
-    stop.onclick = @stop
-    controls.appendChild stop
-    controls
 
   start: =>
     @beat.innerHTML = ''
@@ -28,3 +19,15 @@ class window.Metronome
     currentBeat = parseInt @beat.innerHTML
     currentBeat = 0 if currentBeat == @beatsPerBar || isNaN currentBeat
     @beat.innerHTML = currentBeat + 1
+
+class window.Metronome.Controls
+  constructor: (@metronome) ->
+    @html = HTML 'div', className: 'controls'
+
+    start = HTML 'input', type: 'button', value: 'Start'
+    start.onclick = @metronome.start
+    @html.appendChild start
+
+    stop = HTML 'input', type: 'button', value: 'Stop'
+    stop.onclick = @metronome.stop
+    @html.appendChild stop
