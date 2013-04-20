@@ -38,5 +38,5 @@ class window.Kalimba
     tines
 
 window.Kalimba.Tunings = {
-  'alto': ["F#'", "D'", "B'", 'G', 'E', 'C', 'A', 'G-', 'B', 'D', 'F#', "A'", "C'", "E'", "G'"]
+  'alto': ['F#5', 'D5', 'B5', 'G4', 'E4', 'C4', 'A4', 'G3', 'B4', 'D4', 'F#4', 'A5', 'C5', 'E5', 'G5']
 }

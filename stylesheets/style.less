@@ -3,22 +3,29 @@
 @import 'kalimba';
 @import 'tines';
 @import 'metronome';
+@import 'tuner';
 
 html {
   background-color: #FFF;
 }
 
-#attributions {
+#attribution {
   bottom: 0;
+  font-size: 12px;
   padding: 5px;
   position: absolute;
   right: 0;
 
   a {
     color: #369;
-    font-size: 12px;
-    margin: 0 5px;
+    margin: 0 2px;
+    padding: 2px 4px;
     text-decoration: none;
+
+    &:hover {
+      background-color: #369;
+      color: #FFF;
+    }
   }
 }
 

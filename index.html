@@ -19,27 +19,41 @@
         var container = document.getElementById('container');
         window.kalimba = new Kalimba(container);
         window.metronome = new Metronome(container);
+        Tuner();
       }
     </script>
 
+    <script src="javascripts/jquery.js" type="text/javascript"></script>
+    <script src="javascripts/underscore.js" type="text/javascript"></script>
     <script src="javascripts/coffeescript.js" type="text/javascript"></script>
     <script src="javascripts/browser.js" type="text/javascript"></script>
     <script src="javascripts/less.js" type="text/javascript"></script>
     <script src="javascripts/howler.js" type="text/javascript"></script>
+    <script src="javascripts/dsp.js" type="text/javascript"></script>
     <script src="javascripts/helpers.coffee" type="text/coffeescript"></script>
     <script src="javascripts/kalimba.coffee" type="text/coffeescript"></script>
-    <script src="javascripts/metronome.coffee" type="text/coffeescript" onload="load()"></script>
+    <script src="javascripts/metronome.coffee" type="text/coffeescript"></script>
+    <script src="javascripts/tuner.coffee" type="text/coffeescript" onload="load()"></script>
   </head>
   <body>
     <div id="container">
-      <a href="https://github.com/shuber/kalimba" id="github-fork" target="_blank">
-        <img src="images/fork.png" alt="Fork me on GitHub" />
-      </a>
+      <div class="tuner-wrapper">
+        <div class="note"><span></span></div>
+        <div class="tuner">
+          <canvas></canvas>
+        </div>
+      </div>
     </div>
 
-    <div id="attributions">
+    <a href="https://github.com/shuber/kalimba" id="github-fork" target="_blank">
+      <img src="images/fork.png" alt="Fork me on GitHub" />
+    </a>
+
+    <div id="attribution">
+      <label>Attribution:</label>
       <a href="http://www.freesound.org/people/jorickhoofd/sounds/160052/" target="_blank">Tick Sound</a>
       <a href="http://www.freesound.org/people/hanstimm/sounds/62708/" target="_blank">Tock Sound</a>
+      <a href="http://phenomnomnominal.github.io/docs/tuner.html" target="_blank">Tuner</a>
       <a href="http://nortago.deviantart.com/art/Bg-Texture-wood-38841113" target="_blank">Wood Texture</a>
     </div>
   </body>

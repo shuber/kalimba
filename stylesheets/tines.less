@@ -19,33 +19,34 @@
       font-size: 9px;
     }
 
-    &:hover {
+    &:hover, &.tuned {
       .animation(vibrate, 150ms, 2, linear);
 
       box-shadow: 0px 0px 5px #FFF;
+      height: 320px;
     }
 
-    &[data-note="F#'"], &[data-note="A"], &[data-note="C'"] {
+    &[data-note="F#5"], &[data-note="A4"], &[data-note="C5"] {
       background-color: #369;
     }
 
-    &[data-note="D'"], &[data-note="G-"], &[data-note="E'"] {
+    &[data-note="D5"], &[data-note="G3"], &[data-note="E5"] {
       background-color: #063;
     }
 
-    &[data-note="B'"], &[data-note="B"], &[data-note="G'"] {
+    &[data-note="B5"], &[data-note="B4"], &[data-note="G5"] {
       background-color: #FF0;
     }
 
-    &[data-note="G"], &[data-note="D"] {
+    &[data-note="G4"], &[data-note="D4"] {
       background-color: #F90;
     }
 
-    &[data-note="E"], &[data-note="F#"] {
+    &[data-note="E4"], &[data-note="F#4"] {
       background-color: #C33;
     }
 
-    &[data-note="C"], &[data-note="A'"] {
+    &[data-note="C4"], &[data-note="A5"] {
       background-color: #936;
     }
   }
