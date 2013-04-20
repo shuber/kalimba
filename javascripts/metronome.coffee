@@ -36,12 +36,12 @@ class window.Metronome.Controls
   constructor: (@metronome) ->
     @html = HTML 'div', className: 'controls'
 
-    bpm = new Metronome.Controls.Toggle 'BPM',
+    bpm = new Metronome.Controls.Increment 'BPM',
       @metronome.beatsPerMinute,
       (value) => @metronome.beatsPerMinute = parseInt value unless isNaN value
     @html.appendChild bpm.html
 
-    bpc = new Metronome.Controls.Toggle 'BPC',
+    bpc = new Metronome.Controls.Increment 'BPC',
       @metronome.beatsPerCycle,
       (value) => @metronome.beatsPerCycle = parseInt value unless isNaN value
     @html.appendChild bpc.html
@@ -54,7 +54,7 @@ class window.Metronome.Controls
     stop.onclick = @metronome.stop
     @html.appendChild stop
 
-class window.Metronome.Controls.Toggle
+class window.Metronome.Controls.Increment
   constructor: (name, value, @callback) ->
     @html = HTML 'div', className: "toggle #{name}"
 
