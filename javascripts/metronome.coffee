@@ -8,20 +8,28 @@ class window.Metronome
     @html.appendChild @controls.html
     @container.appendChild @html
 
+    @sounds = {
+      tick: new Howl(urls: ['sounds/tick.mp3']),
+      tock: new Howl(urls: ['sounds/tock.mp3'])
+    }
+
   start: =>
-    @stop()
-    @html.setAttribute 'data-started', 'true'
-    @tick()
+    if @html.getAttribute('data-started') != 'true'
+      @beat.innerHTML = ''
+      @html.setAttribute 'data-started', 'true'
+      @tick()
 
   stop: =>
     @html.setAttribute 'data-started', 'false'
-    @beat.innerHTML = ''
 
   tick: =>
     if @html.getAttribute('data-started') == 'true'
       currentBeat = parseInt @beat.innerHTML
-      currentBeat = 0 if currentBeat >= @beatsPerCycle || isNaN currentBeat
-      @beat.innerHTML = currentBeat + 1
+      nextBeat = if isNaN currentBeat then 1 else currentBeat + 1
+      sound = if nextBeat == @beatsPerCycle then @sounds.tock else @sounds.tick
+      sound.play()
+      nextBeat = 1 if nextBeat > @beatsPerCycle
+      @beat.innerHTML = nextBeat
       setTimeout @tick, 1000*60/@beatsPerMinute
 
 class window.Metronome.Controls
@@ -30,12 +38,12 @@ class window.Metronome.Controls
 
     bpm = new Metronome.Controls.Toggle 'BPM',
       @metronome.beatsPerMinute,
-      (value) => @metronome.beatsPerMinute = value unless isNaN value
+      (value) => @metronome.beatsPerMinute = parseInt value unless isNaN value
     @html.appendChild bpm.html
 
     bpc = new Metronome.Controls.Toggle 'BPC',
       @metronome.beatsPerCycle,
-      (value) => @metronome.beatsPerCycle = value unless isNaN value
+      (value) => @metronome.beatsPerCycle = parseInt value unless isNaN value
     @html.appendChild bpc.html
 
     start = HTML 'input', type: 'button', value: 'Start'
