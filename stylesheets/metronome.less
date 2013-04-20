@@ -4,9 +4,17 @@
   vertical-align: top;
 
   .beat {
+    .rounded-corners(50%);
+
+    border: 5px solid transparent;
     font-size: 128px;
-    min-height: 150px;
-    min-width: 128px;
+    height: 150px;
+    margin-bottom: 5px;
+    width: 150px;
+  }
+
+  &[data-started="true"] .beat {
+    border-color: #000;
   }
 
   .controls input {

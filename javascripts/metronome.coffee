@@ -10,15 +10,15 @@ class window.Metronome
 
   start: =>
     @stop()
-    @started = true
+    @html.setAttribute 'data-started', 'true'
     @tick()
 
   stop: =>
-    @started = false
+    @html.setAttribute 'data-started', 'false'
     @beat.innerHTML = ''
 
   tick: =>
-    if @started
+    if @html.getAttribute('data-started') == 'true'
       currentBeat = parseInt @beat.innerHTML
       currentBeat = 0 if currentBeat >= @beatsPerBar || isNaN currentBeat
       @beat.innerHTML = currentBeat + 1
