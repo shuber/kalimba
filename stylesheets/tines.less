@@ -4,15 +4,14 @@
   padding: 0 10px;
 
   .tine {
-    .rounded-corners(8px);
+    .box-shadow(4px 3px 3px #000);
+    .rounded(8px);
 
     color: #999;
     cursor: pointer;
     float: left;
     margin: 0 5px;
     width: 18px;
-
-    box-shadow: 4px 3px 3px #000;
 
     span {
       color: rgba(0, 0, 0, 0.6);
@@ -21,89 +20,37 @@
 
     &:hover, &.tuned {
       .animation(vibrate, 150ms, 2, linear);
-
-      box-shadow: 0px 0px 5px #FFF;
-      height: 320px;
+/*      .box-shadow(0px 0px 3px #FFF);*/
     }
 
     &[data-note="F#5"], &[data-note="A4"], &[data-note="C5"] {
-      background-color: #369;
+      .gradient(#369, #369, #9CF);
+      &:hover { .gradient(#9CF, #9CF, #369); }
     }
 
     &[data-note="D5"], &[data-note="G3"], &[data-note="E5"] {
-      background-color: #063;
+      .gradient(#063, #063, #6C9);
+      &:hover { .gradient(#6C9, #6C9, #063); }
     }
 
     &[data-note="B5"], &[data-note="B4"], &[data-note="G5"] {
-      background-color: #FF0;
+      .gradient(#FF0, #FF0, #FF9);
+      &:hover { .gradient(#FF9, #FF9, #FF0); }
     }
 
     &[data-note="G4"], &[data-note="D4"] {
-      background-color: #F90;
+      .gradient(#F90, #F90, #FC6);
+      &:hover { .gradient(#FC6, #FC6, #F90); }
     }
 
     &[data-note="E4"], &[data-note="F#4"] {
-      background-color: #C33;
+      .gradient(#C33, #C33, #F99);
+      &:hover { .gradient(#F99, #F99, #C33); }
     }
 
     &[data-note="C4"], &[data-note="A5"] {
-      background-color: #936;
+      .gradient(#936, #936, #F9C);
+      &:hover { .gradient(#F9C, #F9C, #936); }
     }
   }
-}
-
-@keyframes vibrate {
-    0% { transform: translate(0, 0); }
-   10% { transform: translate(1px, 0); }
-   20% { transform: translate(0, 0); }
-   30% { transform: translate(-1px, 0); }
-   40% { transform: translate(0, 0); }
-   50% { transform: translate(1px, 0); }
-   60% { transform: translate(0, 0); }
-   70% { transform: translate(-1px, 0); }
-   80% { transform: translate(0, 0); }
-   90% { transform: translate(1px, 0); }
-  100% { transform: translate(0, 0); }
-}
-
-@-moz-keyframes vibrate {
-    0% { -moz-transform: translate(0, 0); }
-   10% { -moz-transform: translate(1px, 0); }
-   20% { -moz-transform: translate(0, 0); }
-   30% { -moz-transform: translate(-1px, 0); }
-   40% { -moz-transform: translate(0, 0); }
-   50% { -moz-transform: translate(1px, 0); }
-   60% { -moz-transform: translate(0, 0); }
-   70% { -moz-transform: translate(-1px, 0); }
-   80% { -moz-transform: translate(0, 0); }
-   90% { -moz-transform: translate(1px, 0); }
-  100% { -moz-transform: translate(0, 0); }
-}
-
-@-o-keyframes vibrate {
-    0% { -o-transform: translate(0, 0); }
-   10% { -o-transform: translate(1px, 0); }
-   20% { -o-transform: translate(0, 0); }
-   30% { -o-transform: translate(-1px, 0); }
-   40% { -o-transform: translate(0, 0); }
-   50% { -o-transform: translate(1px, 0); }
-   60% { -o-transform: translate(0, 0); }
-   70% { -o-transform: translate(-1px, 0); }
-   80% { -o-transform: translate(0, 0); }
-   90% { -o-transform: translate(1px, 0); }
-  100% { -o-transform: translate(0, 0); }
-}
-
-@-webkit-keyframes vibrate {
-    0% { -webkit-transform: translate(0, 0); }
-   10% { -webkit-transform: translate(1px, 0); }
-   20% { -webkit-transform: translate(0, 0); }
-   30% { -webkit-transform: translate(-1px, 0); }
-   40% { -webkit-transform: translate(0, 0); }
-   50% { -webkit-transform: translate(1px, 0); }
-   60% { -webkit-transform: translate(0, 0); }
-   70% { -webkit-transform: translate(-1px, 0); }
-   80% { -webkit-transform: translate(0, 0); }
-   90% { -webkit-transform: translate(1px, 0); }
-  100% { -webkit-transform: translate(0, 0); }
 }

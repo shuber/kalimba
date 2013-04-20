@@ -1,5 +1,6 @@
 .kalimba {
-  .rounded-corners(20px);
+  .box-shadow(6px 5px 3px #999);
+  .rounded(20px);
   .user-select(none);
 
   display: inline-block;
@@ -9,10 +10,10 @@
   text-align: center;
 
   background-image: url(../images/wood.jpg);
-  box-shadow: 6px 5px 3px #999;
 
   .bar {
-    .rounded-corners(8px);
+    .box-shadow(2px 2px 3px #000);
+    .rounded(8px);
 
     height: 15px;
     position: absolute;
@@ -20,11 +21,11 @@
     width: 100%;
 
     background-color: #fff;
-    box-shadow: 2px 2px 3px #000;
   }
 
   .hole {
-    .rounded-corners(60px);
+    .box-shadow(inset 6px 5px 3px #000);
+    .rounded(60px);
 
     height: 120px;
     margin: 0 auto 200px auto;
@@ -32,6 +33,5 @@
 
     background: transparent url(../images/wood.jpg) bottom right;
     border: 1px solid #000;
-    box-shadow: inset 6px 5px 3px #000;
   }
 }
