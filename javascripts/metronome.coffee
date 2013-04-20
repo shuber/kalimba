@@ -24,7 +24,12 @@ class window.Metronome
     if @html.getAttribute 'data-started'
       currentBeat = parseInt @beat.innerHTML
       nextBeat = if isNaN currentBeat then 1 else currentBeat + 1
-      sound = if nextBeat == @beatsPerCycle then @sounds.tock else @sounds.tick
+      if nextBeat == @beatsPerCycle
+        sound = @sounds.tock
+        @html.setAttribute 'data-tock'
+      else
+        sound = @sounds.tick
+        @html.removeAttribute 'data-tock'
       sound.play()
       nextBeat = 1 if nextBeat > @beatsPerCycle
       @beat.innerHTML = nextBeat

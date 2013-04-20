@@ -12,10 +12,19 @@
     margin-bottom: 5px;
     visibility: hidden;
     width: 150px;
+
+    background-color: #EFEFEF;
+    border-color: #369;
+    color: #369;
   }
 
   &[data-started] .beat {
     visibility: visible;
+  }
+
+  &[data-tock] .beat {
+    border-color: #063;
+    color: #063;
   }
 
   .controls input {
