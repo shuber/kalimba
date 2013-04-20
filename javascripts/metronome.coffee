@@ -13,7 +13,7 @@ class window.Metronome
     @started = true
     @tick()
 
-  stop: => 
+  stop: =>
     @started = false
     @beat.innerHTML = ''
 
