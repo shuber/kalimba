@@ -19,7 +19,7 @@
         var container = document.getElementById('container');
         window.kalimba = new Kalimba(container);
         window.metronome = new Metronome(container);
-        window.tuner = new Tuner();
+        window.tuner = new Tuner(kalimba.frequencies);
 
         var lastNote;
 

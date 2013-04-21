@@ -27,7 +27,7 @@ if not navigator.getUserMedia
   alert 'THIS TUNER REQUIRES THE LATEST BUILD OF CHROME CANARY (23/09/2012) ON MAC WITH "Web Audio Input" ENABLED IN chrome://flags.'
 
 class window.Tuner
-  constructor: ->
+  constructor: (@frequencies = Tuner.frequencies) ->
     @createAudioContext()
     @createBuffer()
     @createFilters()
@@ -70,7 +70,7 @@ class window.Tuner
   getPitch: (freq) ->
     minDiff = Infinity
     diff = Infinity
-    for own key, val of Tuner.frequencies
+    for own key, val of @frequencies
       if Math.abs(freq - val) < minDiff
         minDiff = Math.abs(freq - val)
         diff = freq - val

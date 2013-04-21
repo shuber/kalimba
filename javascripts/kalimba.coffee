@@ -6,6 +6,9 @@ class window.Kalimba
       @html.setAttribute 'data-tuning', notes
       notes = tuning
 
+    @frequencies = {}
+    @frequencies[key] = Tuner.frequencies[key] for key, value in notes
+
     @html.setAttribute 'data-notes', notes
     @html.appendChild @tines(notes)
     @html.appendChild HTML('div', className: 'hole')
