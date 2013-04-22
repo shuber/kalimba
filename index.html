@@ -25,15 +25,16 @@
 
         tuner.start(20, function(note, diff) {
           if (note != lastNote) {
-            console.log([note, diff]);
             lastNote = note;
+
             $('.tuner .note').css('visibility', 'visible').find('span').html(note);
             $('.tuner .diff').html(diff);
-            var tine = $('.tine[data-note="' + note + '"]').addClass('tuned').data('tuned-at', new Date().getTime());
+
+            var now = new Date().getTime();
+            var tine = $('.tine[data-note="' + note + '"]').addClass('tuned').data('tuned-at', now);
             var duration = 500;
             var callback = function() {
-              var now = new Date().getTime();
-              if (tine.data('tuned-at') + duration < now)
+              if (tine.data('tuned-at') == now)
                 tine.removeClass('tuned');
             }
             setTimeout(callback, duration);
