@@ -14,3 +14,11 @@
   -webkit-animation-iteration-count: @iterations;
   -webkit-animation-timing-function: @timing;
 }
+
+.tine-color(@background-color) {
+  background-color: @background-color;
+
+  @gradient-color: lighten(@background-color, 30%);
+  &:hover, &.tuned { .gradient(@gradient-color, @gradient-color, @background-color); }
+
+}
