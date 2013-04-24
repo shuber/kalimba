@@ -15,20 +15,26 @@ class window.Kalimba
     @html.appendChild HTML('div', className: 'bar')
     @container.appendChild @html
 
-  play: ->
-    # TODO: generate audio sound
+  press: ->
+    $(this).addClass 'tuned'
+    console.log "pressed #{this.getAttribute 'data-note'}"
+
+  release: ->
+    $(this).removeClass 'tuned'
+    console.log "released #{this.getAttribute 'data-note'}"
 
   tine: (note) ->
     wrapper = HTML 'div', className: 'tine-wrapper'
     tine = HTML 'div',
       className: 'tine',
       innerHTML: "<span>#{note}</span>",
-      onmouseover: @play,
+      onmouseover: @press,
+      onmouseout: @release,
     tine.setAttribute 'data-note', note
     wrapper.appendChild tine
     wrapper
 
-  tines: (notes) ->
+  tines: (notes) =>
     tines = HTML 'div', className: 'tines'
     height = 300
     root = Math.ceil(notes.length / 2)
