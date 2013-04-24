@@ -3,47 +3,52 @@
   margin: 0 auto;
   padding: 0 10px;
 
-  .tine {
-    .box-shadow(4px 3px 3px #000);
-    .rounded(8px);
-
-    color: #999;
-    cursor: pointer;
+  .tine-wrapper {
     float: left;
     margin: 0 5px;
     width: 18px;
 
-    span {
-      color: rgba(0, 0, 0, 0.6);
-      font-size: 9px;
-    }
+    .tine {
+      .box-shadow(4px 3px 3px #000);
+      .rounded(8px);
 
-    &[data-note="F#5"], &[data-note="A4"], &[data-note="C5"] {
-      .tine-color(#369);
-    }
+      color: #999;
+      cursor: pointer;
+      height: 100%;
 
-    &[data-note="D5"], &[data-note="G3"], &[data-note="E5"] {
-      .tine-color(#063);
-    }
+      span {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 9px;
+      }
 
-    &[data-note="B5"], &[data-note="B4"], &[data-note="G5"] {
-      .tine-color(#FF0);
-    }
+      &[data-note="F#5"], &[data-note="A4"], &[data-note="C5"] {
+        .tine-color(#369);
+      }
 
-    &[data-note="G4"], &[data-note="D4"] {
-      .tine-color(#F90);
-    }
+      &[data-note="D5"], &[data-note="G3"], &[data-note="E5"] {
+        .tine-color(#063);
+      }
 
-    &[data-note="E4"], &[data-note="F#4"] {
-      .tine-color(#C33);
-    }
+      &[data-note="B5"], &[data-note="B4"], &[data-note="G5"] {
+        .tine-color(#FF0);
+      }
 
-    &[data-note="C4"], &[data-note="A5"] {
-      .tine-color(#936);
-    }
+      &[data-note="G4"], &[data-note="D4"] {
+        .tine-color(#F90);
+      }
 
-    &:hover, &.tuned {
-      .animation(vibrate, 150ms, 2, linear);
+      &[data-note="E4"], &[data-note="F#4"] {
+        .tine-color(#C33);
+      }
+
+      &[data-note="C4"], &[data-note="A5"] {
+        .tine-color(#936);
+      }
+
+      &:hover, &.tuned {
+        .box-shadow(2px 2px 2px #000);
+        height: 99%;
+      }
     }
   }
 }

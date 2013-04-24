@@ -19,12 +19,14 @@ class window.Kalimba
     # TODO: generate audio sound
 
   tine: (note) ->
+    wrapper = HTML 'div', className: 'tine-wrapper'
     tine = HTML 'div',
       className: 'tine',
       innerHTML: "<span>#{note}</span>",
       onmouseover: @play,
     tine.setAttribute 'data-note', note
-    tine
+    wrapper.appendChild tine
+    wrapper
 
   tines: (notes) ->
     tines = HTML 'div', className: 'tines'
@@ -34,7 +36,6 @@ class window.Kalimba
       tine = @tine note
       offset = index + 1 - root
       margin = (if offset < 0 then 10 else -13) * offset
-      tine.setAttribute 'data-offset', offset
       tine.style.height = (height + margin) + 'px'
       tines.appendChild tine
     tines
