@@ -16,18 +16,16 @@ class window.Kalimba
     @container.appendChild @html
 
   press: ->
-    $(this).addClass 'tuned'
-    console.log "pressed #{this.getAttribute 'data-note'}"
+    console.log "pressed #{$(this).addClass('pressed').data('note')}"
 
   release: ->
-    $(this).removeClass 'tuned'
-    console.log "released #{this.getAttribute 'data-note'}"
+    console.log "released #{$(this).removeClass('pressed').data('note')}"
 
   tine: (note) ->
     wrapper = HTML 'div', className: 'tine-wrapper'
     tine = HTML 'div',
       className: 'tine',
-      innerHTML: "<span>#{note}</span>",
+      innerHTML: "<span class=\"note\">#{note}</span>",
       onmouseover: @press,
       onmouseout: @release,
     tine.setAttribute 'data-note', note

@@ -18,7 +18,16 @@
 
       span {
         color: rgba(0, 0, 0, 0.6);
-        font-size: 9px;
+
+        &.note {
+          font-size: 9px;
+        }
+
+        &.shortcut {
+          display: block;
+          font-size: 12px;
+          margin-top: 60px;
+        }
       }
 
       &[data-note="F#5"], &[data-note="A4"], &[data-note="C5"] {
@@ -45,7 +54,7 @@
         .tine-color(#936);
       }
 
-      &:hover, &.tuned {
+      &.pressed {
         .box-shadow(2px 2px 2px #000);
         height: 99%;
       }

@@ -40,6 +40,20 @@
             setTimeout(callback, duration);
           }
         });
+
+        var $document = $(document);
+        var shortcuts = 'a s d f g e r y u i h j k l ;'.split(' ');
+        $(kalimba.tines).find('.tine').each(function(index) {
+          var tine = $(this);
+          var shortcut = shortcuts[index];
+          tine.append('<span class="shortcut">' + shortcut + '</span>');
+          $document.bind('keydown', shortcut, function() {
+            tine.trigger('mouseover');
+          });
+          $document.bind('keyup', shortcut, function() {
+            tine.trigger('mouseout');
+          });
+        });
       }
     </script>
 

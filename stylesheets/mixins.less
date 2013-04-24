@@ -19,6 +19,5 @@
   background-color: @background-color;
 
   @gradient-color: lighten(@background-color, 30%);
-  &:hover, &.tuned { .gradient(@gradient-color, @gradient-color, @background-color); }
-
+  &.pressed { .gradient(@gradient-color, @gradient-color, @background-color); }
 }
