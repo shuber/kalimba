@@ -160,6 +160,7 @@ class window.Tuner
     @noiseThreshold = -Infinity
     @maxPeaks = 0
     @maxPeakCount = 0
+    console.log 'Tuner started and listening'
     try
       src = @audioContext.createMediaStreamSource @stream
       src.connect @lp
