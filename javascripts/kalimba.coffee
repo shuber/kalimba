@@ -1,3 +1,12 @@
+sounds = {
+  A4: new Howl(urls: ['sounds/A4.wav']),
+  B3: new Howl(urls: ['sounds/B3.wav']),
+  D6: new Howl(urls: ['sounds/D6.wav']),
+  F5: new Howl(urls: ['sounds/F5.wav']),
+  G4: new Howl(urls: ['sounds/G4.wav']),
+  G5: new Howl(urls: ['sounds/G5.wav'])
+}
+
 class window.Kalimba
   constructor: (@container, notes = 'alto') ->
     @html = HTML 'div', className: 'kalimba'
@@ -16,12 +25,13 @@ class window.Kalimba
     @container.appendChild @html
 
   press: ->
+    sound.play() if sound = sounds[@getAttribute('data-note')];
     console.log "pressed #{$(this).addClass('pressed').data('note')}"
 
   release: ->
     console.log "released #{$(this).removeClass('pressed').data('note')}"
 
-  tine: (note) ->
+  tine: (note) =>
     wrapper = HTML 'div', className: 'tine-wrapper'
     tine = HTML 'div',
       className: 'tine',
@@ -29,6 +39,7 @@ class window.Kalimba
       onmouseover: @press,
       onmouseout: @release,
     tine.setAttribute 'data-note', note
+    tine.setAttribute 'data-frequency', @frequencies[note]
     wrapper.appendChild tine
     wrapper
 
